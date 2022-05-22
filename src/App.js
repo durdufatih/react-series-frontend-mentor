@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Dialog from "./components/Dialog";
 
 function App() {
+  const popupValueList = [
+    {
+      title: "How did we go?",
+      description:
+        "Please let us know how we did with your support request. All feedback is appriciated to help us improve our offering!",
+    },
+    {
+      title: "How do we go?",
+      description: "Please let us know how we did with your support request",
+    },
+    {
+      title: "How will we go?",
+      description:
+        " All feedback is appriciated to help us improve our offering!",
+    },
+    {
+      title: "How can we go?",
+      description: "Please let us know",
+    },
+    {
+      title: "How should we go?",
+      description: "Please let us know",
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dialog valueList={popupValueList} />
     </div>
   );
 }

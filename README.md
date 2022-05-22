@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).This project is about confirmation popup that getting design file from frontendmentor that you can find in public folder like active-states and desktop-design. I didn't work pixcel perfect
 
 ## Available Scripts
 
