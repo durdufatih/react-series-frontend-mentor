@@ -4,10 +4,10 @@ import ButonList from "./ButonList";
 import Info from "./Info";
 
 function Dialog(props) {
-  const [btnOrder, setBtnOrder] = useState(1);
+  const [activeButtonIndex, setActiveButtonIndex] = useState(1);
 
   const setItemOrder = (id) => {
-    setBtnOrder(id);
+    setActiveButtonIndex(id);
   };
 
   return (
@@ -16,9 +16,9 @@ function Dialog(props) {
         <div className="icon">
           <AiFillStar color="orange" width={28} height={28} />
         </div>
-        <Info activeData={props.valueList.find((item) => item.id === btnOrder)} />
+        <Info activeData={props.valueList.find((item) => item.id === activeButtonIndex)} />
         <ButonList
-          active={btnOrder}
+          active={activeButtonIndex}
           setLastOrder={setItemOrder}
           valueList={props.valueList}
         />
