@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import ButonList from "./ButonList";
+import Info from "./Info";
 
 function Dialog(props) {
   const [btnOrder, setBtnOrder] = useState(1);
-  
-  const setItemOrder = (i) => {
-    setBtnOrder(i);
+
+  const setItemOrder = (id) => {
+    setBtnOrder(id);
   };
-  console.log(props.valueList)
-  const activeValue = props.valueList[btnOrder-1];
+
   return (
     <div className="container">
       <div className="popup">
         <div className="icon">
           <AiFillStar color="orange" width={28} height={28} />
         </div>
-        <div className="header">{activeValue.title}</div>
-        <div className="detail">{activeValue.description}</div>
-        <ButonList active={btnOrder} setLastOrder={setItemOrder} />
+        <Info activeData={props.valueList.find((item) => item.id === btnOrder)} />
+        <ButonList
+          active={btnOrder}
+          setLastOrder={setItemOrder}
+          valueList={props.valueList}
+        />
         <div className="summit">
           <button className="summitBtn">SUBMIT</button>
         </div>

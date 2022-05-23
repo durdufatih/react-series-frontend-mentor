@@ -1,20 +1,17 @@
 import React from "react";
 
 function ButonList(props) {
-  
-
-
   return (
     <div className="numbers">
-      {[...Array(5)].map((x, i) => (
+      {props.valueList.map((element) => (
         <button
-          key={i}
+          key={element.id}
           onClick={() => {
-            props.setLastOrder(i + 1);
+            props.setLastOrder(element.id);
           }}
-          className={`item ${i + 1 === props.active ? "active" : ""}`}
+          className={`item ${element.id === props.active ? "active" : ""}`}
         >
-          {i + 1}
+          {element.id}
         </button>
       ))}
     </div>
